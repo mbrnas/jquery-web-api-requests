@@ -28,28 +28,20 @@
 
 $.ajax({
     method: "GET",
-//    url: "http://v2.jokeapi.dev/joke/programming",
-//    url: "data/about.json",
-//    url: "http://ist.rit.edu/api/about/",
     url: "proxy.php",
     data: {path: "/news"},
     timeout: 10000,
     dataType: "json",
     beforeSend: ()=>{
         console.log("BEFORE SEND");
-        $('#section-about').html('<img src="media/gears.gif" id="spinner">');
     }
 }).always(()=>{
     console.log("ALWAYS");
     $('#spinner').remove();
 }).done((json)=>{
     console.log("DONE");
-//    console.log(json.setup);
-//    console.log(json.delivery);
-//    $('#section-about').html(
-//            `<div><h2>${json.title}</h2><p>${json.description}</p></div>`);
     $.each(json.older, (index, newsItem)=>{
-        $('#section-news').append(`
+        $('#section1').append(`
             <h2>${newsItem.date}</h2>
             <p><b>${newsItem.title}</b></p>
             <p>${newsItem.description}</p>`);

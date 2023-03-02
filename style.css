@@ -1,0 +1,95 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;    
+}
+
+nav{
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+li{
+    float: left;
+}
+a{
+    padding: 20px;
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    margin: 0 50px;
+    color: black;
+}
+
+#section1{
+    height: 700px;
+    background-color: pink;
+    display: inline-block;
+    width: 100%;
+}
+#section2{
+    height: 700px;
+    background-color: yellow;
+    display: inline-block;
+    width: 100%;
+}
+#section3{
+    height: 700px;
+    background-color: red;
+    display: inline-block;
+    width: 100%;
+}
+#section4{
+    height: 700px;
+    background-color: green;
+    display: inline-block;
+    width: 100%;
+}
+#section5{
+    height: 700px;
+    background-color: blue;
+    display: inline-block;
+    width: 100%;
+}
+
+h1{
+    margin: 300px;
+    text-align: center;
+    padding: 0;
+}
+
+@media screen and (max-width: 950px) {
+    nav{
+        display: none;
+    }
+    .mobile-navigation{
+        display: flex;
+        justify-content: right;
+        background: pink;
+    }
+    .menu-img{
+        padding-right: 10px;
+    }
+  }
+
+  @media screen and (min-width: 950px) {
+    .mobile-navigation{
+        display: none;
+    }
+  }
