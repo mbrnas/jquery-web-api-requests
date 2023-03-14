@@ -9,15 +9,18 @@ export class Controller {
 
         //1. send the request - the jqXHR object is returned, 
         //that will hold the response on success (available within the done() callback)
-        let response = this.model.getData('/news');
+        //let response = this.model.getData('/news');
         let aboutResponse = this.model.getData('/about');
 
         let undergraduateResponse = this.model.getData('/degrees/undergraduate');
 
+        let graduateResponse = this.model.getData('/degrees/graduate');
+
+        let employmentCoopResponse = this.model.getData('/employment/coopTable');
         //2. specify what will be executed when the request is successful (done() callback)
-        response.done((data) => {
-            this.view.renderNewsSection(data);
-        });
+        // response.done((data) => {
+        //     this.view.renderNewsSection(data);
+        // });
 
         aboutResponse.done((data) => {
             this.view.renderAboutSection(data);
@@ -25,6 +28,15 @@ export class Controller {
 
         undergraduateResponse.done((data) => {
             this.view.renderUndergraduateSection(data);
+        });
+
+        graduateResponse.done((data) => {
+            this.view.renderGraduateSection(data);
         })
+
+        coopTableResponse.done((data) => {
+            this.view.renderCoopTableSection(data);
+        })
+
     }
 }
